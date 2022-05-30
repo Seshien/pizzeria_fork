@@ -29,20 +29,11 @@ public class RegistrationController {
 
     private CustomerRegistrationService customerRegistrationService;
     private CustomerRegistrationFormValidator customerRegistrationFormValidator;
-    private GoogleReCaptchaService googleReCaptchaService;
     private PasswordEncoder passwordEncoder;
-
-    @Value("${recaptcha.public.key}")
-    private String recaptchaPublicKey;
 
     @InitBinder
     public void initBinder(WebDataBinder webDataBinder) {
         webDataBinder.addValidators(customerRegistrationFormValidator);
-    }
-
-    @ModelAttribute("recaptchaPublicKey")
-    public String recaptchaPublicKey() {
-        return recaptchaPublicKey;
     }
 
     @GetMapping
@@ -54,15 +45,11 @@ public class RegistrationController {
     @PostMapping
     public String processRegistrationForm(@Valid @ModelAttribute("customerRegistrationForm") CustomerRegistrationForm customerRegistrationForm,
                                           BindingResult bindingResult, HttpServletRequest httpServletRequest,
-                                          @RequestParam(name = "returnUrl", defaultValue = "/") String returnUrl,
-                                          @RequestParam("g-recaptcha-response") String recaptchaResponse) throws ServletException {
+                                          @RequestParam(name = "returnUrl", defaultValue = "/") String returnUrl) throws ServletException {
         if (bindingResult.hasErrors()) {
             return "register";
         }
 
-        if (!googleReCaptchaService.isValid(recaptchaResponse)) {
-            return "register";
-        }
 
         customerRegistrationService.processRegistration(convertRegistrationFormToRegistrationDTO(customerRegistrationForm));
 
@@ -80,15 +67,6 @@ public class RegistrationController {
         customerRegistrationDTO.setEmail(customerRegistrationForm.getEmail());
         customerRegistrationDTO.setPhoneNumber(customerRegistrationForm.getPhoneNumber());
         return customerRegistrationDTO;
-    }
-
-    public GoogleReCaptchaService getGoogleReCaptchaService() {
-        return googleReCaptchaService;
-    }
-
-    @Autowired
-    public void setGoogleReCaptchaService(GoogleReCaptchaService googleReCaptchaService) {
-        this.googleReCaptchaService = googleReCaptchaService;
     }
 
     public PasswordEncoder getPasswordEncoder() {

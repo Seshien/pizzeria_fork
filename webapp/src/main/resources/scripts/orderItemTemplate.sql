@@ -36,7 +36,7 @@ INSERT INTO pizza (id, bakestyle_id, crust_id, cutstyle_id, size_id, left_pizzas
 VALUES (1, 1, 1, 1, 1, 1, 2);
 
 INSERT INTO orderitem (id, quantity, pizza_id) VALUES (1, 1, 1);
-INSERT INTO orderitemtemplate (id, orderitem_id, imageFileName) VALUES (1, 1, 'the_veggie.jpg');
+INSERT INTO orderitemtemplate (id, orderitem_id, imageFileName) VALUES (1, 1, 'the_veggie.webp');
 
 -- four cheese
 INSERT INTO pizzaitem (id, quantity, ingredient_id) VALUES
@@ -71,7 +71,7 @@ INSERT INTO pizza (id, bakestyle_id, crust_id, cutstyle_id, size_id, left_pizzas
 VALUES (2, 1, 1, 1, 1, 3, 4);
 
 INSERT INTO orderitem (id, quantity, pizza_id) VALUES (2, 1, 2);
-INSERT INTO orderitemtemplate (id, orderitem_id, imageFileName) VALUES (2, 2, 'four_cheese.jpg');
+INSERT INTO orderitemtemplate (id, orderitem_id, imageFileName) VALUES (2, 2, 'four_cheese.webp');
 
 -- pepperoni classic
 INSERT INTO pizzaitem (id, quantity, ingredient_id) VALUES
@@ -98,7 +98,7 @@ INSERT INTO pizza (id, bakestyle_id, crust_id, cutstyle_id, size_id, left_pizzas
 VALUES (3, 1, 1, 1, 1, 5, 6);
 
 INSERT INTO orderitem (id, quantity, pizza_id) VALUES (3, 1, 3);
-INSERT INTO orderitemtemplate (id, orderitem_id, imageFileName) VALUES (3, 3, 'pepperoni_classic.jpg');
+INSERT INTO orderitemtemplate (id, orderitem_id, imageFileName) VALUES (3, 3, 'pepperoni_classic.webp');
 
 -- White Garden
 INSERT INTO pizzaitem (id, quantity, ingredient_id) VALUES
@@ -137,7 +137,7 @@ INSERT INTO pizza (id, bakestyle_id, crust_id, cutstyle_id, size_id, left_pizzas
 VALUES (4, 1, 1, 1, 1, 7, 8);
 
 INSERT INTO orderitem (id, quantity, pizza_id) VALUES (4, 1, 4);
-INSERT INTO orderitemtemplate (id, orderitem_id, imageFileName) VALUES (4, 4, 'white_garden.jpg');
+INSERT INTO orderitemtemplate (id, orderitem_id, imageFileName) VALUES (4, 4, 'white_garden.webp');
 
 -- BBQ Chicken
 INSERT INTO pizzaitem (id, quantity, ingredient_id) VALUES
@@ -180,7 +180,7 @@ INSERT INTO pizza (id, bakestyle_id, crust_id, cutstyle_id, size_id, left_pizzas
 VALUES (5, 1, 1, 1, 1, 9, 10);
 
 INSERT INTO orderitem (id, quantity, pizza_id) VALUES (5, 1, 5);
-INSERT INTO orderitemtemplate (id, orderitem_id, imageFileName) VALUES (5, 5, 'bbq_chicken.jpg');
+INSERT INTO orderitemtemplate (id, orderitem_id, imageFileName) VALUES (5, 5, 'bbq_chicken.webp');
 
 -- Hawaiian
 INSERT INTO pizzaitem (id, quantity, ingredient_id) VALUES
@@ -219,4 +219,4 @@ INSERT INTO pizza (id, bakestyle_id, crust_id, cutstyle_id, size_id, left_pizzas
 VALUES (6, 1, 1, 1, 1, 11, 12);
 
 INSERT INTO orderitem (id, quantity, pizza_id) VALUES (6, 1, 6);
-INSERT INTO orderitemtemplate (id, orderitem_id, imageFileName) VALUES (6, 6, 'hawaiian.jpg');
+INSERT INTO orderitemtemplate (id, orderitem_id, imageFileName) VALUES (6, 6, 'hawaiian.webp');

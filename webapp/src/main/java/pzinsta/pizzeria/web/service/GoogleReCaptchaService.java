@@ -10,11 +10,11 @@ public class GoogleReCaptchaService {
     private ReCaptcha reCaptcha;
 
     public GoogleReCaptchaService(@Value("${recaptcha.private.key}")String recaptchaPrivateKey) {
-        this.reCaptcha = new ReCaptcha(recaptchaPrivateKey);
+        //this.reCaptcha = new ReCaptcha(recaptchaPrivateKey);
     }
 
     public boolean isValid(String recaptchaResponse) {
-        return reCaptcha.isValid(recaptchaResponse);
+        return true;
     }
 
 }
